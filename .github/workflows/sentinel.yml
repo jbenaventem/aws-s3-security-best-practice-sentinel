@@ -6,20 +6,11 @@ on:
       
 jobs:
   sentinel:
-    name: 'Sentinel'
+    name: 'Sentinel SDLC'
     runs-on: ubuntu-latest
     steps:
       - name: 'Checkout'
         uses: actions/checkout@master
-      - name: 'Sentinel Format'
-        uses: hashicorp/sentinel-github-actions@master
-        with:
-          stl_actions_version: 0.14.2
-          stl_actions_subcommand: 'fmt *.sentinel'
-          stl_actions_working_dir: '.'
-          stl_actions_comment: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: 'Sentinel Test'
         if: failure()
         uses: hashicorp/sentinel-github-actions@master
