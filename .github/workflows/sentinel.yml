@@ -15,7 +15,7 @@ jobs:
         uses: hashicorp/sentinel-github-actions@master
         with:
           stl_actions_version: 0.14.2
-          stl_actions_subcommand: 'fmt'
+          stl_actions_subcommand: 'fmt *.sentinel'
           stl_actions_working_dir: '.'
           stl_actions_comment: true
         env:
